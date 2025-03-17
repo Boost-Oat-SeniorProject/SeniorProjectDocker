@@ -37,13 +37,13 @@ services:
       - backend_network
   
   frontendocr:
-    image: frontendocr
+    image: siwakorndocker/frontendocr
     container_name: frontendocr
-    env_file: .env.local
+    env_file: .env
     ports:
       - 3000:3000
     environment:
-      - NEXT_PUBLIC_BACKEND_URL=${NEXT_PUBLIC_BACKEND_URL}
+      - BACKEND_URL=${BACKEND_URL}
     networks:
       - backend_network
 
